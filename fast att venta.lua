@@ -4,7 +4,7 @@ local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 local FastAttackEnabled = false
-local FastAttackRange = 950
+local FastAttackRange = 2000
 local TOGGLE_KEY = Enum.KeyCode.U
 
 local Net = ReplicatedStorage.Modules.Net
