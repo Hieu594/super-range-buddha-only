@@ -17,7 +17,7 @@ local ToggleButton = nil
 local function CreateGUI()
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "FastAttackGUI"
-    ScreenGui.ResetOnSpawn = false
+    ScreenGui.ResetOnSpawn = true
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     local Frame = Instance.new("Frame")
