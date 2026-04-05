@@ -3,7 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
-local FastAttackEnabled = true -- ĐÃ ĐỔI THÀNH TRUE MẶC ĐỊNH
+local FastAttackEnabled = true
 local FastAttackRange = 950
 local TOGGLE_KEY = Enum.KeyCode.U
 
@@ -36,14 +36,12 @@ local function CreateGUI()
     ToggleButton = Instance.new("TextButton")
     ToggleButton.Name = "ToggleButton"
     ToggleButton.Parent = Frame
-    -- Đổi màu nền mặc định sang xanh vì trạng thái ban đầu là True
-    ToggleButton.BackgroundColor3 = Color3.fromRGB(60, 255, 60) 
+    ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
     ToggleButton.BorderSizePixel = 0
     ToggleButton.Position = UDim2.new(0.1, 0, 0.2, 0)
     ToggleButton.Size = UDim2.new(0.8, 0, 0.6, 0)
     ToggleButton.Font = Enum.Font.GothamBold
-    -- Đổi text mặc định sang ON
-    ToggleButton.Text = "Fast Attack: ON" 
+    ToggleButton.Text = "Fast Attack: OFF"
     ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ToggleButton.TextSize = 16
     ToggleButton.TextWrapped = true
@@ -170,7 +168,6 @@ local function StartFastAttack()
 end
 
 local function StopFastAttack()
-    FastAttackEnabled = false 
     if FastAttackConnection then
         task.cancel(FastAttackConnection)
         FastAttackConnection = nil
@@ -196,11 +193,6 @@ local function ToggleFastAttack()
 end
 
 ToggleButton = CreateGUI()
-
--- Kích hoạt vòng lặp ngay lập tức vì mặc định là True
-if FastAttackEnabled then
-    StartFastAttack()
-end
 
 ToggleButton.MouseButton1Click:Connect(function()
     ToggleFastAttack()
