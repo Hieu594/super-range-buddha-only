@@ -3,7 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
-local FastAttackEnabled = true
+local FastAttackEnabled = false
 local FastAttackRange = 950
 local TOGGLE_KEY = Enum.KeyCode.U
 
@@ -17,7 +17,7 @@ local ToggleButton = nil
 local function CreateGUI()
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "FastAttackGUI"
-    ScreenGui.ResetOnSpawn = true
+    ScreenGui.ResetOnSpawn = false
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     local Frame = Instance.new("Frame")
